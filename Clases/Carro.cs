@@ -23,6 +23,13 @@ namespace Clase_6_de_abril.Clases
             Modelo = model;
             Color = col;
         }
+        public int Encender()
+        {
+            if (Encendido == 0)
+            {
+                Encendido++;
+            }
+        }
         public int Acelerar()
         {
             if (Encendido == 0)
