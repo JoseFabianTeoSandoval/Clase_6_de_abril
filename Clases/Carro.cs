@@ -23,25 +23,58 @@ namespace Clase_6_de_abril.Clases
             Modelo = model;
             Color = col;
         }
-        public int Encender()
+        public string Encender()
         {
             if (Encendido == 0)
             {
-                Encendido++;
-            }
-        }
-        public int Acelerar()
-        {
-            if (Encendido == 0)
-            {
-                return 0;
+                Encendido = 1;
+                velocidad_actual = 0; 
+                return "Carro encendido correctamente.";
             }
             else
             {
-                velocidad_actual += 10;
-                return velocidad_actual;
+                return "El carro ya está encendido.";
             }
-            
+        }
+
+        public void Apagar()
+        {
+            if (Encendido == 1)
+            {
+                Encendido = 0;
+                velocidad_actual = 0;
+            }
+        }
+
+        public int Acelerar()
+        {
+            if (Encendido == 1 && velocidad_actual < MAXVELOCIDAD)
+            {
+                velocidad_actual += 10;
+            }
+            return velocidad_actual;
+        }
+
+        public int Desacelerar()
+        {
+            if (Encendido == 1 && velocidad_actual > 0)
+            {
+                velocidad_actual -= 10;
+                if (velocidad_actual < 0)
+                {
+                    velocidad_actual = 0;
+                }
+            }
+            return velocidad_actual;
+        }
+
+        public int Frenar()
+        {
+            if (Encendido == 1 && velocidad_actual > 0)
+            {
+               velocidad_actual = 0;
+            }
+            return velocidad_actual;
         }
 
     }
