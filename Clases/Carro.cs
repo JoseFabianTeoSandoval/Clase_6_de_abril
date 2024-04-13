@@ -20,9 +20,17 @@ namespace Clase_6_de_abril.Clases
             Modelo = model;
             Color = col;
         }
-        public void Encender()
+        public string Encender()
         {
-            if (Encendido == 0) Encendido = 1;
+            if (Encendido == 0)
+            {
+                Encendido = 1;
+                return "El carro esta encendido";
+            }
+            else
+            {
+                return "El carro ya esta encendido";
+            }
         }
         public int Acelerar()
         {
@@ -39,7 +47,7 @@ namespace Clase_6_de_abril.Clases
         }
         public string Apagar()
         {
-            if (velocidad_actual = 0)
+            if (velocidad_actual == 0)
             {
                 Encendido = 0;
                 return "El carro esta apagado";
